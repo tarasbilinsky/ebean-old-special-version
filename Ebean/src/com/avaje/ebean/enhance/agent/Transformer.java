@@ -133,7 +133,7 @@ public class Transformer implements ClassFileTransformer {
         } catch (Exception e) {
             // a safety net for unexpected errors
             // in the transformation
-            enhanceContext.log(e);
+            enhanceContext.log(new RuntimeException("Ebean enhance class "+className,e));
             return null;
         }
     }

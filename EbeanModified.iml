@@ -36,15 +36,6 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="joda-time-2.7.jar">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../play1/framework/lib/joda-time-2.7.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
       <library name="geronimo-servlet_2.5_spec-1.2.jar">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/../play1/framework/lib/geronimo-servlet_2.5_spec-1.2.jar!/" />
@@ -63,5 +54,14 @@
       </library>
     </orderEntry>
     <orderEntry type="inheritedJdk" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../play1/framework/lib/joda-time-2.8.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

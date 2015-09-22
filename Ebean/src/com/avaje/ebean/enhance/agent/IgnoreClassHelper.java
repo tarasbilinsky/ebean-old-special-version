@@ -100,9 +100,9 @@ public class IgnoreClassHelper {
 			return false;
 		}
 		
-		return !className.startsWith("models/") && !className.startsWith("base/model/");
+		if(className.startsWith("services/")) return true;
 
-		/*
+
 		if (processPackages.length > 0) {
 			// use specific positive matching
 			return specificMatching(className);
@@ -164,6 +164,5 @@ public class IgnoreClassHelper {
 			return true;
 		}
 		return false;
-		*/
 	}
 }
