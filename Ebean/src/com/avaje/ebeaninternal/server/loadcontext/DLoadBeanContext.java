@@ -175,10 +175,12 @@ public class DLoadBeanContext implements LoadBeanContext, BeanLoader {
 
     // Get a batch of beans to lazy load
     List<EntityBeanIntercept> batch = null;
+    String dscr = "type["+desc.getFullName()+"] fullPath[" + fullPath + "] batchSize["+batchSize+"]";
     try {
       batch = weakList.getLoadBatch(position, batchSize);
     } catch (IllegalStateException e) {
-      logger.error( "type["+desc.getFullName()+"] fullPath[" + fullPath + "] batchSize["+batchSize+"]", e);
+      logger.error( dscr, e);
+      if(batch==null) throw new RuntimeException("EBEAN Exception, added by TB. "+dscr,e);
     }
     
     if (hitCache && batchSize > 1) {
@@ -186,6 +188,9 @@ public class DLoadBeanContext implements LoadBeanContext, BeanLoader {
       // Add more as necessary to make up our batch that will be loaded.
       batch = loadBeanCheckBatch(batch);
     }
+
+      if(batch==null) throw new RuntimeException("EBEAN Exception, added by TB. "+dscr);
+
 
       for (int i = 0; i < batch.size(); i++) {
         
